@@ -7,6 +7,11 @@ const app = express()
 app.get("/",(req,res)=>{
     res.send("Hello world")
 })
+
+ 
+app.get("/puluthi",(req,res)=>{
+    res.send("valathi")
+})
  
 
-app.listen(3001, console.log("app is running in 3001"))
+app.listen(1337, console.log("app is running in 1337"))
