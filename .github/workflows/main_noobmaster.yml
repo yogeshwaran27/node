@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - noobmaster
+name: Build and deploy Node.js app to Azure Web App - noobmaster69
 
 on:
   push:
@@ -21,11 +18,8 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+      - name: Install dependencies
+        run: npm install
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -56,7 +50,12 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'noobmaster'
+          app-name: 'noobmaster69'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_97B4F39AF8014232A154F486F3ECA2DE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D865EA156C9E45738B879CC245D8FF84 }}
+
+      - name: Start application
+        run: |
+          echo "Starting the application..."
+          node app.js
