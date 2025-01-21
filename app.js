@@ -1,9 +1,6 @@
 const express = require('express')
-
-
 const app = express()
- 
- 
+const PORT = process.env.PORT || 3000;
 app.get("/",(req,res)=>{
     res.send("Hello world")
 })
@@ -14,4 +11,4 @@ app.get("/puluthi",(req,res)=>{
 })
  
 
-app.listen(1433, console.log("app is running in 1337"))
+app.listen(PORT, console.log("app is running in "+PORT))
